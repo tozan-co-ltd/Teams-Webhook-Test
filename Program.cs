@@ -19,16 +19,16 @@ services.AddTeamsNotifier();
 var provider = services.BuildServiceProvider();
 var teams = provider.GetRequiredService<ITeamsNotifierService>();
 
-// ── Tự động gửi message khi khởi động ────────────────────────────────────────
+// ── 起動時にメッセージを自動送信する。 ────────────────────────────────────────
 Console.WriteLine("Sending...");
 
 try
 {
-    // 2. Giả lập exception và gửi error alert
+    // 
     // try { 
         // ThrowSampleError(); 
 
-        // 1. Gửi custom message
+        // 1. カスタムメッセージ送信機能
         await teams.SendMessageAsync(new CustomMessage
         {
             Title    = "アプリが正常に起動しました 🚀",
@@ -36,6 +36,7 @@ try
             Severity = MessageSeverity.Info
         });
         Console.WriteLine("✅ アプリが正常に起動しました!");
+        // 2. 例外を擬似的に発生させ、エラーアラートを送信する。
         // ThrowSampleError();
     // }
     // catch (Exception ex)
