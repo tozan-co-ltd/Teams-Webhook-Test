@@ -1,3 +1,0 @@
-# Teams Notifier — .NET 9
-
-.NETアプリからIncoming Webhook経由でMicrosoft Teamsへメッセージとエラーアラートを送信する。
